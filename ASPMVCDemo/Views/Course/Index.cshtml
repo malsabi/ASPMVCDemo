@@ -1,11 +1,14 @@
-﻿@model IEnumerable<ASPMVCDemo.Models.CourseModel>
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration configuration
+@model IEnumerable<ASPMVCDemo.Models.CourseModel>
 @{
     ViewData["Title"] = "Course page";
 }
 
 <div class="text-center">
     <h1 class="display-5">Welcome to course page</h1>
-    <h1 class="display-4">This is a list of services of courses</h1>
+    <h1 class="display-4">The database name is: @configuration["aspmvcdemo:Settings:dbname"]</h1>
+    <h1 class="display-3">This is a list of services of courses</h1>
 </div>
 <div>
     <table class="table" table-dark">

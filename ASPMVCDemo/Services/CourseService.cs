@@ -14,7 +14,7 @@ namespace ASPMVCDemo.Services
 
         private SqlConnection GetConnection()
         {
-            return new SqlConnection(configuration.GetConnectionString("SQLConnection"));
+            return new SqlConnection(configuration["aspmvcdemo:Settings:SQLConnection"]);
         }
 
         public IEnumerable<CourseModel> GetCourses()
